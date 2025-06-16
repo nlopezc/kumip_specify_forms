@@ -1,0 +1,43 @@
+<!-- original agent form definition -->
+<viewdef name="Agent" class="edu.ku.brc.specify.datamodel.Agent" type="form" gettable="edu.ku.brc.af.ui.forms.DataGetterForObj" settable="edu.ku.brc.af.ui.forms.DataSetterForObj">
+	<desc>Agent subform for Acessions.</desc>
+	<columnDef>100px,2px,190px,5px,100px,2px,190px,5px,105px,2px,89px,2px,35px,15px,p:g</columnDef>
+	<columnDef os="lnx">115px,2px,200px,5px,115px,2px,200px,5px,119px,2px,115px,2px,35px,15px,p:g</columnDef>
+	<columnDef os="mac">130px,2px,230px,5px,120px,2px,230px,5px,139px,2px,125px,2px,38px,15px,p:g</columnDef>
+	<columnDef os="exp">p,2px,p:g(2),5px:g,p,2px,p:g(2),5px:g,p,2px,p:g,2px,p,p,p:g</columnDef>
+	<rowDef auto="true" cell="p" sep="2px"/>
+	<rows>
+		<row>
+			<cell type="label" labelfor="0"/>
+			<cell type="field" id="0" name="agentType" uitype="combobox" ignore="true"/>
+			<cell type="label" labelfor="1"/>
+			<cell type="field" id="1" name="title" uitype="combobox" picklist="AgentTitles"/>
+			<cell type="label" labelfor="14"/>
+			<cell type="field" id="14" name="jobTitle" uitype="text" colspan="3"/>
+		</row>
+		<row>
+			<cell type="label" labelfor="3"/>
+			<cell type="field" id="3" name="lastName" uitype="text"/>
+			<cell type="label" labelfor="5"/>
+			<cell type="field" id="5" name="firstName" uitype="text"/>
+			<cell type="label" labelfor="4"/>
+			<cell type="field" id="4" name="middleInitial" uitype="text" colspan="3"/>
+		</row>
+		<row>
+			<cell type="label" labelfor="8"/>
+			<cell type="field" id="8" name="abbreviation" uitype="text"/>
+			<cell type="label" labelfor="7"/>
+			<cell type="field" id="7" name="email" uitype="text" colspan="5"/>
+			<cell type="field" id="mailto" name="this" uitype="plugin" initialize="name=WebLinkButton;weblink=MailTo;icon=EMail;watch=7"/>
+		</row>
+		<row>
+			<cell type="subview" viewname="Address" id="9" name="addresses" colspan="14"/>
+		</row>
+		<row>
+			<cell type="separator" label="Attachments" colspan="14"/>
+		</row>
+		<row>
+			<cell type="subview" id="agentAttachments" viewname="ObjectAttachment" name="agentAttachments" colspan="14" initialize="btn=true;icon=AgentAttachment"/>
+		</row>
+	</rows>
+</viewdef>
